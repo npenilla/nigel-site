@@ -2,8 +2,14 @@ import React from "react"
 import { Link } from "gatsby"
 
 const ListLink = props => (
-  <a class="font-mono mr-4 p-1" to={props.to}>
+  <a class="font-mono px-2 py-1" href={props.to}>
     <Link to={props.to}>{props.children}</Link>
+  </a>
+)
+
+const ExternalLink = props => (
+  <a class="font-mono text-xs px-2 py-1" href={props.to}>
+    {props.children}
   </a>
 )
 export default function Header(props) {
@@ -22,8 +28,14 @@ export default function Header(props) {
         <li>
           <ListLink to="/projects">Projects</ListLink>
         </li>
+        <span class="mx-2">|</span>
         <li>
-          <ListLink to="/about">About</ListLink>
+          <ExternalLink to="https://github.com/npenilla">Github</ExternalLink>
+        </li>
+        <li>
+          <ExternalLink to="https://www.linkedin.com/in/nigel-penilla/">
+            LinkedIn
+          </ExternalLink>
         </li>
       </ul>
     </div>
